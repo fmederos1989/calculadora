@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 1px solid red;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.contenedor-principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 50px;
+    width: 500px;
+    height: 650px;
+}
+
+.display{
+    width: 100%;
+    box-sizing: border-box;
+    height: 25%;
+}
+
+.contenedor{
+    width: 500px;
+    height: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.operadores{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100px;
+    height: 100%;
+}
+
+.operadores div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-numeros{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 400px;
+}
+
+.operaciones-2{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+
+.fila{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+}
+
+.fila div{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cero{
+    width: 70%; 
+}
+#punto{
+    width: 35%;
+}

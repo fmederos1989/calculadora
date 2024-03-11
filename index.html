@@ -5,46 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="app.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">    
     <title>Calculadora</title>
 </head>
 <body>
-    <div class="contenedor-principal">
-        <div class="display">Display</div>
-        <div class="contenedor">
-            <div class="contenedor-numeros">
-                <div class="fila">
-                    <div> C </div>
-                    <div> ( </div>
-                    <div> ) </div>
-                </div>
-                <div class="fila"> 
-                    <div> 7 </div>
-                    <div> 8 </div>
-                    <div> 9 </div>
-                </div> 
-                <div class="fila"> 
-                    <div> 4 </div>
-                    <div> 5 </div>
-                    <div> 6 </div>
-                </div> 
-                <div class="fila"> 
-                    <div> 1 </div>
-                    <div> 2 </div>
-                    <div> 3 </div>
-                </div> 
-                <div class="fila"> 
-                    <div id="cero"> 0 </div>
-                    <div id="punto">  . </div>
-                </div>
-            </div>
-            <div class="operadores">
-                <div> % </div>
-                <div> * </div>
-                <div> - </div>
-                <div> + </div>
-                <div> = </div>
+    <h1>Calculadora Basica</h1>
+        <div class="calculadora">
+            <div id="historico" class="display"></div>
+            <div id="resultado" class="display"></div>
+            <div class="keyboard">
+                <button class="btn" id="borrar">AC</button>
+                <button class="btn"> ( </button>
+                <button class="btn"> ) </button>
+                <button class="btn operador" id="division" value="1"> ÷ </button>
+                <button class="btn numero" value="7"> 7 </button>
+                <button class="btn numero" value="8"> 8 </button>
+                <button class="btn numero" value="9"> 9 </button>
+                <button class="btn operador" id="multiplicacion" value="2"> x </button>
+                <button class="btn numero" value="4"> 4 </button>
+                <button class="btn numero" value="5"> 5 </button>
+                <button class="btn numero" value="6"> 6 </button>
+                <button class="btn operador" id="resta" value="3"> - </button>
+                <button class="btn numero" value="1"> 1 </button>
+                <button class="btn numero" value="2"> 2 </button>
+                <button class="btn numero" value="3"> 3 </button>
+                <button class="btn operador" id="suma" value="4"> + </button>
+                <button class="btn numero" id="cero"> 0 </button>
+                <button class="btn" id="punto"> . </button>
+                <button class="btn" id="igual"> = </button>
             </div>
         </div>
-    </div>
 </body>
 </html>

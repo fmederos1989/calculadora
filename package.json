@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "jsdom": "^24.0.0",
+    "jsdom-quokka-plugin": "^1.0.16"
+  },
+  "name": "calculadora",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "plugins": ["jsdom-quokka-plugin"],
+    "jsdom": {
+        "file": "/html/file/path",
+        "html": ".../index.html",
+        "userAgent": "...",
+        "config": {}
+    }
+}

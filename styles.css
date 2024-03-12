@@ -40,7 +40,7 @@ body{
     width: 100%;
     height: 15%;
     text-align: right;
-    overflow-x: auto;
+    overflow-x: hidden;
     padding: 10px;
     background-color: black;
     color: aquamarine;
@@ -77,6 +77,8 @@ body{
 #borrar{
     background-color: brown;
     color: white;
+    width: 74%;
+    /* flex-grow: 2; */
 }
 
 .operador{

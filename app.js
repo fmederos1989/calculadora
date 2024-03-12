@@ -20,77 +20,124 @@ const historia = document.querySelector('#historico');
 let entradaA = 0;
 let entradaB = 0;
 let operacion = 0;
+let total = 0;
+let cambio = 0;
+
 
 const borrar = document.querySelector('#borrar');
 borrar.addEventListener('click',() => {
-    display.textContent = 0;
+    display.textContent = '';
     historia.textContent = '';
+    entradaA = 0;
+    entradaB = 0;
+    operacion = 0;
+    total = 0;
 });
 
 const sumar = document.querySelector('#suma');
 sumar.addEventListener('click',() => {
-    historia.textContent += ' + ';
-    display.textContent = entradaB;
-    operacion = 1; 
+    if(total === 0) {
+        cambio = 1;
+        historia.textContent +=' + ';
+        display.textContent = ''
+        operacion = 1;
+    }else{
+        cambio = 1;
+        entradaA = total;
+        historia.textContent +=' + ';
+        display.textContent = '';
+        operacion = 1;
+    }
 });
 
 const restar = document.querySelector('#resta');
 restar.addEventListener('click',() => {
-    historia.textContent +=' - ';
-    display.textContent = entradaB;
-    operacion = 2;
+    if(total === 0) {
+        cambio = 1;
+        historia.textContent +=' - ';
+        display.textContent = ''
+        operacion = 2;
+    }else{
+        cambio = 1;
+        entradaA = total;
+        historia.textContent +=' - ';
+        display.textContent = '';
+        operacion = 2;
+    }
 });
 
 const multiplicacion = document.querySelector('#multiplicacion');
 multiplicacion.addEventListener('click',() => {
-    historia.textContent +=' * ';
-    display.textContent = entradaB;
-    operacion = 3;
+    if(total === 0) {
+        cambio = 1;
+        historia.textContent +=' x ';
+        display.textContent = ''
+        operacion = 3;
+    }else{
+        cambio = 1;
+        entradaA = total;
+        historia.textContent +=' x ';
+        display.textContent = '';
+        operacion = 3;
+    }
 });
 
 const division = document.querySelector('#division');
 division.addEventListener('click',() => {
-    historia.textContent +=' / ';
-    display.textContent = entradaB;
-    operacion = 4;
+    if(total === 0) {
+        cambio = 1;
+        historia.textContent +=' / ';
+        display.textContent = ''
+        operacion = 4;
+    }else{
+        cambio = 1;
+        entradaA = total;
+        historia.textContent +=' / ';
+        display.textContent = '';
+        operacion = 4;
+    }
 });
-
-
 
 numeros.forEach((numero) => {
     numero.addEventListener('click', (e) => {
-            if (entradaA === 0){
-                entradaA = e.target.value;
+            if (operacion === 0){
+                entradaA = parseInt(e.target.value);
                 display.textContent += entradaA;
                 historia.textContent += entradaA;
+                entradaA = parseInt(display.textContent);
             } else {
-                entradaB = e.target.value;
-                display.textContent = entradaB;
+                entradaB = parseInt(e.target.value);
+                display.textContent += entradaB;
                 historia.textContent += entradaB;
+                entradaB = parseInt(display.textContent);
             }
-            console.log(entradaA);
-            console.log(entradaB);
+            console.log(`cambio: ${cambio}`);
+            console.log(`entrada A: ${entradaA}`);
+            console.log(`entrada B: ${entradaB}`);
         });
 });
 
 const result = document.querySelector('#igual')
 result.addEventListener('click', () => {
-    display.textContent = 'Hola Mundo'
-
-    // switch (operacion) {
-    //     case 1:
-    //         display.textContent = suma(entradaA, entradaB);
-    //         break;
-    //     case 2:
-    //         display.textContent = resta(entradaA, entradaB);
-    //         break;
-    //     case 3:
-    //         display.textContent = multi(entradaA, entradaB);
-    //         break;
-    //     case 4:
-    //         display.textContent = div(entradaA, entradaB);
-    //         break;
-    //     default:
-    //         break;
-    }
-);
+    switch (operacion) {
+        case 1:
+            display.textContent = suma(entradaA, entradaB);
+            total = suma(entradaA, entradaB);
+            break;
+        case 2:
+            display.textContent = resta(entradaA, entradaB);
+            total = resta(entradaA, entradaB);
+            break;
+        case 3:
+            display.textContent = multi(entradaA, entradaB);
+            total = multi(entradaA, entradaB);
+            break;
+        case 4:
+            display.textContent = div(entradaA, entradaB);
+            total = div(entradaA, entradaB);
+            break;
+        default:
+            break;
+        }
+    console.log(`Total : ${total}`);
+});

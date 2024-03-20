@@ -1,13 +1,13 @@
-// Definiendo funciones para Operadores
+//! Definiendo funciones para Operadores
 
-// Suma
+//! Suma
 function suma(a, b) {return a + b;}
-// Resta
+//! Resta
 function resta(a, b) {return a - b;}
-// Multiplicación
+//! Multiplicación
 function multi(a, b) {return a * b;}
 
-// División
+//! División
 function div(a, b) {return a / b;}
 
 
@@ -141,3 +141,4 @@ result.addEventListener('click', () => {
         }
     console.log(`Total : ${total}`);
 });
+
